@@ -34,7 +34,7 @@ function renderStatus(status) {
   const setupNotice = $('setupNotice');
   setupNotice.hidden = Boolean(status.botConfigured && status.adminConfigured !== false);
   if (!status.botConfigured) {
-    setupNotice.querySelector('p').textContent = 'Render Environment bölümünde ADMIN_PASSWORD, DISCORD_BOT_TOKEN ve ALLOWED_GUILD_ID secret değişkenlerini ayarla. Tokenı bu panele veya GitHub'a yazma.';
+    setupNotice.querySelector('p').textContent = 'Render Environment bölümünde ADMIN_PASSWORD, DISCORD_BOT_TOKEN ve ALLOWED_GUILD_ID secret değişkenlerini ayarla. Tokenı bu panele veya GitHub’a yazma.';
   }
   const online = Boolean(status.botReady);
   setText('botStatus', online ? 'Çevrimiçi' : (status.botConfigured ? 'Bağlanıyor / çevrimdışı' : 'Kurulum gerekli'));
