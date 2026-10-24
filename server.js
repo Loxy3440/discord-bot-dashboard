@@ -90,7 +90,7 @@ app.get('/api/session', (req, res) => {
 });
 
 app.post('/api/login', sameOrigin, loginLimiter, (req, res) => {
-  if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'ADMIN_PASSWORD ortam secret'ı ayarlanmamış.' });
+  if (!ADMIN_PASSWORD) return res.status(503).json({ error: 'ADMIN_PASSWORD secret değişkeni ayarlanmamış.' });
   const password = typeof req.body?.password === 'string' ? req.body.password : '';
   if (!equalSecret(password, ADMIN_PASSWORD)) return res.status(401).json({ error: 'Parola yanlış.' });
   for (const [sid, expiry] of sessions.entries()) if (expiry < Date.now()) sessions.delete(sid);
